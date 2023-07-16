@@ -125,11 +125,8 @@
             document.getElementById('usa').innerHTML = date.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }).split(", ")[1]
             document.getElementById('china').innerHTML = date.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }).split(", ")[1]
 
-            // console.log(document.getElementById('alarm').value);
             let alamrHour = alarm.value.split(":")[0]
-            // console.log("alamrHour "+alamrHour);
             let alamrMin = alarm.value.split(":")[1]
-            // console.log("alamrMin "+alamrMin);
 
             if (date.getHours() == alamrHour && date.getMinutes() == alamrMin) {
                 heading.innerHTML = "Alarm is Ringing!!!"
