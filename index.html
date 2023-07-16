@@ -197,10 +197,18 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
     <script>
-        let date = new Date()
-        document.getElementById('india').innerHTML = date.toLocaleString().split(", ")[1]
-        document.getElementById('usa').innerHTML = date.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }).split(", ")[1]
-        document.getElementById('china').innerHTML = date.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }).split(", ")[1]
+        
+        const updateTime = () => {
+            let date = new Date()
+            document.getElementById('india').innerHTML = date.toLocaleString().split(", ")[1]
+            document.getElementById('usa').innerHTML = date.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }).split(", ")[1]
+            document.getElementById('china').innerHTML = date.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }).split(", ")[1]
+        }
+        updateTime()
+        setInterval(() => {
+            updateTime()
+        }, 1000);
+
     </script>
 </body>
 
